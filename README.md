@@ -1,6 +1,6 @@
 # metal-toggle-password-input
 
-Show/hide password Metal.js component
+Toggle password Metal.js component
 
 ## Setup
 

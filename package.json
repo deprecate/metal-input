@@ -1,7 +1,7 @@
 {
   "name": "metal-toggle-password-input",
   "version": "0.0.1",
-  "description": "Show/hide password Metal.js component",
+  "description": "Toggle password Metal.js component",
   "license": "BSD",
   "repository": "ygorcosta/metal-toggle-password-input",
   "engines": {
