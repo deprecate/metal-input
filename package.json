@@ -1,0 +1,39 @@
+{
+  "name": "metal-toggle-password-input",
+  "version": "0.0.1",
+  "description": "Show/hide password Metal.js component",
+  "license": "BSD",
+  "repository": "ygorcosta/metal-toggle-password-input",
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=3.0.0"
+  },
+  "main": "lib/TogglePasswordInput.js",
+  "jsnext:main": "src/TogglePasswordInput.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "compile": "babel --presets metal -d lib/ src/",
+    "prepublish": "gulp soy && npm run compile",
+    "test": "gulp test",
+    "watch": "gulp build:watch"
+  },
+  "keywords": [
+    "metal"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "metal-soy": "^2.0.0",
+    "westyle": "wedeploy/westyle#master"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-metal": "^4.0.0",
+    "gulp": "^3.8.11",
+    "gulp-metal": "^1.0.0"
+  }
+}
