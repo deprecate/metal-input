@@ -9,7 +9,6 @@ class TogglePasswordInput extends Component {
 
 	toggle() {
 		this.isShowing = !this.isShowing;
-		console.log(this.isShowing);
 	}
 	
 }
