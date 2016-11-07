@@ -21,7 +21,6 @@
 
 /**
  * @param classes
- * @param readonly
  * @param placeholder
  * @param type
  * @param value
@@ -45,7 +44,7 @@
  * @param? rowIndex
  */
 {template .fieldAttrs kind="attributes"}
-	autocomplete="{$autocomplete ? 'on' : 'off'}"
+	autocomplete="{$autocomplete ?: 'on'}"
 	
 	{if isNonnull($fieldIndex)}
 		data-field-index="{$fieldIndex}"
