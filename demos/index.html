@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Demo: Toogle Password Input</title>
+	<title>Demo: Metal Input</title>
 	<!-- westyle -->
 	<link rel="stylesheet" href="../node_modules/westyle/build/fonts/galano/galano.css">
 	<link rel="stylesheet" href="../node_modules/westyle/build/fonts/icon-12/icon-12.css">
 	<link rel="stylesheet" href="../node_modules/westyle/build/fonts/icon-16/icon-16.css">
 	<link rel="stylesheet" href="../node_modules/westyle/build/westyle.css">
 
-	<script src="../build/globals/toggle-password-input.js"></script>
+	<script src="../build/globals/input.js"></script>
+
+	<style type="text/css">
+		.form-control {
+			margin-bottom: 24px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container-hybrid-half">
 		<div class="row">
 			<div class="content-header">
 				<div class="header-title">
-					Toggle Password Input
+					Metal Input
 				</div>
 			</div>
 		</div>
@@ -25,16 +31,60 @@
 				<div class="col-xs-16">
 					<div id="form"></div>
 				</div>
+				<div class="col-xs-16">
+					<div id="form1"></div>
+				</div>
+				<div class="col-xs-16">
+					<div id="form2"></div>
+				</div>
+				<div class="col-xs-16">
+					<div id="form3"></div>
+				</div>
+				<div class="col-xs-16">
+					<div id="form4"></div>
+				</div>
 			</section>
 		</div>
 	</div>
 	<script type="text/javascript">
-		window.passwordToggle = new metal.TogglePasswordInput({
-			isEditable: false,
-			isShowing: false,
-			label: 'Password',
-			value:'123456'
+		window.text = new metal.Input({
+			classes: 'form-control',
+			placeholder: 'Name',
+			fieldIndex: 0
 		}, '#form');
+
+		window.text = new metal.Input({
+			classes: 'form-control',
+			placeholder: 'Email',
+			type: 'email',
+			fieldIndex: 1
+		}, '#form1');
+
+		window.password = new metal.Input({
+			classes: 'form-control',
+			placeholder: 'Password',
+			type: 'password',
+			maxLength: 10,
+			fieldIndex: 2
+		}, '#form2');
+
+		window.readonly = new metal.Input({
+			classes: 'form-control',
+			isShowing: true,
+			isTogglePassword: true,
+			placeholder: 'Secret question #readonly',
+			readonly : 'readonly',
+			value: 'I\'m a readonly field',
+			fieldIndex: 3
+		}, '#form3');
+
+		window.secret = new metal.Input({
+			classes: 'form-control',
+			isShowing: false,
+			isTogglePassword: true,
+			placeholder: 'Secret question',
+			fieldIndex: 4
+		}, '#form4');
 	</script>
 </body>
 </html>

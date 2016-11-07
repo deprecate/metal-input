@@ -1,6 +1,6 @@
-# metal-toggle-password-input
+# metal-input
 
-Toggle password Metal.js component
+Custom input Metal.js component
 
 ## Setup
 

@@ -1,15 +1,15 @@
 {
-  "name": "metal-toggle-password-input",
+  "name": "metal-input",
   "version": "0.0.1",
-  "description": "Toggle password Metal.js component",
+  "description": "Custom input Metal.js component",
   "license": "BSD",
-  "repository": "ygorcosta/metal-toggle-password-input",
+  "repository": "ygorcosta/metal-input",
   "engines": {
     "node": ">=0.12.0",
     "npm": ">=3.0.0"
   },
-  "main": "lib/TogglePasswordInput.js",
-  "jsnext:main": "src/TogglePasswordInput.js",
+  "main": "lib/Input.js",
+  "jsnext:main": "src/Input.js",
   "files": [
     "lib",
     "src",

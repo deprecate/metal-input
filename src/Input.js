@@ -1,20 +1,20 @@
 'use strict';
 
 import core from 'metal';
-import templates from './TogglePasswordInput.soy.js';
+import templates from './Input.soy.js';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-class TogglePasswordInput extends Component {
+class Input extends Component {
 
 	toggle() {
 		this.isShowing = !this.isShowing;
 	}
 	
 }
-Soy.register(TogglePasswordInput, templates);
+Soy.register(Input, templates);
 
-TogglePasswordInput.STATE = {
+Input.STATE = {
 	/**
 	 * @type {boolean}
 	 * @default false
@@ -24,4 +24,4 @@ TogglePasswordInput.STATE = {
 	}
 };
 
-export default TogglePasswordInput;
+export default Input;
