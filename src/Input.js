@@ -10,14 +10,6 @@ class Input extends Component {
 	toggle() {
 		this.isShowing = !this.isShowing;
 	}
-
-	inputFn_() {
-
-	}
-
-	changeFn_() {
-		
-	}
 	
 }
 Soy.register(Input, templates);
@@ -74,18 +66,11 @@ Input.STATE = {
 
 	},
 	/**
-	 * Defines the function name to 'onchange' event
-	 * @type {string}
-	 */
-	onChange: {
-		validator: core.isString
-	},
-	/**
 	 * Defines the function name to 'oninput' event
-	 * @type {string}
+	 * @type {function}
 	 */
 	onInput: {
-		validator: core.isString
+		validator: core.isFunction
 	},
 	/**
 	 * Defines "name" html attribute

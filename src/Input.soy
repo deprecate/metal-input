@@ -40,7 +40,6 @@
  * @param? autocomplete
  * @param? fieldIndex
  * @param? maxLength
- * @param? onChange
  * @param? onInput
  * @param? readonly
  * @param? rowIndex
@@ -54,10 +53,6 @@
 	
 	{if isNonnull($maxLength)}
 		maxlength="{$maxLength}"
-	{/if}
-
-	{if isNonnull($onChange)}
-		data-onchange="{$onChange}"
 	{/if}
 	
 	{if isNonnull($onInput)}

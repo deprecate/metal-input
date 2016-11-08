@@ -103,19 +103,20 @@ describe('Input', function() {
 	});
 
 	it('should add "data-oninput" custom attribute to requested field', function() {
-		comp = new Input({
-			onInput: 'inputFn_'
-		});
-		assert.equal('inputFn_', comp.element.getAttribute('data-oninput'));
-		assert.ok(comp.element.hasAttribute('data-oninput'));
-	});
+		var handlerFunction = sinon.stub();
 
-	it('should add "data-onchange" custom attribute to requested field', function() {
 		comp = new Input({
-			onChange: 'changeFn_'
+			onInput: handlerFunction
 		});
-		assert.equal('changeFn_', comp.element.getAttribute('data-onchange'));
-		assert.ok(comp.element.hasAttribute('data-onchange'));
+
+		let testField = comp.element;
+		testField.value = 'test';
+		dom.triggerEvent(testField, 'input');
+
+		comp.once('stateSynced', function() {
+			assert.equal(1, handlerFunction.callCount);
+			done();
+		});
 	});
 
 	//TOGGLE PASSWORD
