@@ -113,7 +113,7 @@ describe('Input', function() {
 		testField.value = 'test';
 		dom.triggerEvent(testField, 'input');
 
-		comp.once('stateSynced', function() {
+		comp.once('stateSynced', function(done) {
 			assert.equal(1, handlerFunction.callCount);
 			done();
 		});
@@ -150,7 +150,7 @@ describe('Input', function() {
 		let toggleButton = comp.element.childNodes[1].querySelector('button');
 		dom.triggerEvent(toggleButton, 'click');
 
-		comp.once('stateSynced', function() {
+		comp.once('stateSynced', function(done) {
 			assert.equal('text', comp.element.childNodes[0].getAttribute('type'));
 			done();
 		});
@@ -166,7 +166,7 @@ describe('Input', function() {
 		let toggleButton = comp.element.childNodes[1].querySelector('button');
 		dom.triggerEvent(toggleButton, 'click');
 
-		comp.once('stateSynced', function() {
+		comp.once('stateSynced', function(done) {
 			assert.equal('password', comp.element.childNodes[0].getAttribute('type'));
 			done();
 		});
