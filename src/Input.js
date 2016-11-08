@@ -10,6 +10,14 @@ class Input extends Component {
 	toggle() {
 		this.isShowing = !this.isShowing;
 	}
+
+	inputFn_() {
+
+	}
+
+	changeFn_() {
+		
+	}
 	
 }
 Soy.register(Input, templates);
@@ -63,6 +71,7 @@ Input.STATE = {
 	 */
 	maxLength: {
 		validator: core.isNumber
+
 	},
 	/**
 	 * Defines the function name to 'onchange' event
@@ -76,6 +85,13 @@ Input.STATE = {
 	 * @type {string}
 	 */
 	onInput: {
+		validator: core.isString
+	},
+	/**
+	 * Defines "name" html attribute
+	 * @type {string}
+	 */
+	name: {
 		validator: core.isString
 	},
 	/**
@@ -94,10 +110,10 @@ Input.STATE = {
 	},
 	/**
 	 * Defines which row this field belongs to
-	 * @type {string}
+	 * @type {number}
 	 */
 	rowIndex: {
-		validator: core.isString
+		validator: core.isNumber
 	},
 	/**
 	 * @type {string}

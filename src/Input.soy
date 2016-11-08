@@ -21,15 +21,17 @@
 
 /**
  * @param classes
+ * @param name
  * @param placeholder
  * @param type
  * @param value
  */
 {template .input kind="html"}
 	<input class="{$classes ?: ''}"
+		name="{$name ?: ''}"
+		placeholder="{$placeholder ?: ''}"
 		type="{$type ?: 'text'}"
 		value="{$value ?: ''}"
-		placeholder="{$placeholder ?: ''}"
 		{call .fieldAttrs data="all" /}
 	/>
 {/template}
@@ -55,7 +57,7 @@
 	{/if}
 
 	{if isNonnull($onChange)}
-		data-oninput="{$onChange}"
+		data-onchange="{$onChange}"
 	{/if}
 	
 	{if isNonnull($onInput)}
