@@ -57,6 +57,7 @@
 			classes: 'form-control',
 			placeholder: 'Email',
 			type: 'email',
+			readonly : false,
 			fieldIndex: 1
 		}, '#form1');
 
@@ -65,12 +66,13 @@
 			placeholder: 'Password',
 			type: 'password',
 			maxLength: 10,
+			readonly : false,
 			fieldIndex: 2
 		}, '#form2');
 
 		window.readonly = new metal.Input({
 			classes: 'form-control',
-			isShowing: true,
+			isShowing: false,
 			isTogglePassword: true,
 			placeholder: 'Secret question #readonly',
 			readonly : true,
@@ -80,9 +82,10 @@
 
 		window.secret = new metal.Input({
 			classes: 'form-control',
-			isShowing: false,
+			isShowing: true,
 			isTogglePassword: true,
 			placeholder: 'Secret question',
+			readonly : false,
 			fieldIndex: 4
 		}, '#form4');
 	</script>

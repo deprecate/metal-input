@@ -59,7 +59,7 @@
 		data-oninput="{$onInput}"
 	{/if}
 	
-	{if isNonnull($readonly)}
+	{if isNonnull($readonly) and $readonly}
 		readonly
 	{/if}
 
