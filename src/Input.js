@@ -7,8 +7,28 @@ import Soy from 'metal-soy';
 
 class Input extends Component {
 
+	created() {
+		if(this.editableWhileVisible) {
+			if(!this.readonly && !this.isShowing){
+				this.editableWhileVisible = false;
+			}
+
+			if(this.readonly && this.isShowing) {
+				this.readonly = false;
+			}
+		}
+	}
+
 	toggle() {
 		this.isShowing = !this.isShowing;
+		
+		if(this.editableWhileVisible) {
+			if(this.isShowing) {
+				this.readonly = false;
+			} else {
+				this.readonly = true;
+			}
+		}
 	}
 	
 }
@@ -30,6 +50,15 @@ Input.STATE = {
 	 */
 	classes: {
 		validator: core.isString
+	},
+	/**
+	 * Defines if while exposed state, the related field shall be editable
+	 * It only works combined with isTogglePassword
+	 * @type {boolean}
+	 */
+	editableWhileVisible: {
+		validator: core.isBoolean,
+		value: false
 	},
 	/**
 	 * Defines the index of the field

@@ -172,4 +172,53 @@ describe('Input', function() {
 		});
 	});
 
+	//editable while visible
+	it('should be editable if "isShowing" and "readonly" are false', function() {
+		comp = new Input({
+			editableWhileVisible: true,
+			isShowing: false,
+			isTogglePassword: true,
+			readonly: false
+		});
+
+		assert.notOk(comp.element.childNodes[0].hasAttribute('readonly'));
+		assert.equal('password', comp.element.childNodes[0].getAttribute('type'));
+	});
+
+	it('should be editable if "isShowing" is true and "readonly" is false', function() {
+		comp = new Input({
+			editableWhileVisible: true,
+			isShowing: true,
+			isTogglePassword: true,
+			readonly: false
+		});
+
+		assert.notOk(comp.element.childNodes[0].hasAttribute('readonly'));
+		assert.equal('text', comp.element.childNodes[0].getAttribute('type'));
+	});
+
+	it('should be not editable if "isShowing" is false and "readonly" is true', function() {
+		comp = new Input({
+			editableWhileVisible: true,
+			isShowing: false,
+			isTogglePassword: true,
+			readonly: true
+		});
+
+		assert.ok(comp.element.childNodes[0].hasAttribute('readonly'));
+		assert.equal('password', comp.element.childNodes[0].getAttribute('type'));
+	});
+
+	it('should be not editable if "isShowing" and "readonly" are true', function() {
+		comp = new Input({
+			editableWhileVisible: true,
+			isShowing: true,
+			isTogglePassword: true,
+			readonly: true
+		});
+
+		assert.notOk(comp.element.childNodes[0].hasAttribute('readonly'));
+		assert.equal('text', comp.element.childNodes[0].getAttribute('type'));
+	});
+
 });
