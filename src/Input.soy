@@ -1,7 +1,7 @@
 {namespace Input}
 
 /**
- * @param isShowing
+ * @param? isShowing_
  * @param? isTogglePassword
  */
 {template .render}
@@ -9,7 +9,7 @@
 	{if $isTogglePassword}
 		<div class="input-group has-action-button">
 			{call .input data="all" }
-				{param type : $isShowing ? 'text' : 'password' /}
+				{param type : $isShowing_ ? 'text' : 'password' /}
 			{/call}
 			{call .togglePassword data="all" /}
 		</div>
@@ -69,13 +69,13 @@
 {/template}
 
 /**
- * @param isShowing
+ * @param isShowing_
  */
 {template .togglePassword kind="html"}
 	<span class="input-group-btn">
 		<button class="btn btn-sm btn-primary" type="button" data-onclick="toggle">
-			<span class="{$isShowing ? 'icon-12-eye-off' : 'icon-12-eye'}"></span>
-			<div class="btn-tooltip">{$isShowing ? 'Hide' : 'Show'}</div>
+			<span class="{$isShowing_ ? 'icon-12-eye-off' : 'icon-12-eye'}"></span>
+			<div class="btn-tooltip">{$isShowing_ ? 'Hide' : 'Show'}</div>
 		</button>
 	</span>
 {/template}

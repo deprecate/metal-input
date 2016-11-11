@@ -136,7 +136,7 @@ describe('Input', function() {
 
 	it('should set the related field visibility to exposed (text)', function() {
 		comp = new Input({
-			isShowing: true,
+			initialShow: true,
 			isTogglePassword: true
 		});
 		assert.equal('text', comp.element.childNodes[0].getAttribute('type'));
@@ -159,7 +159,7 @@ describe('Input', function() {
 
 	it('should change the field visibility by clicking on the toogle button : exposed to hidden', function() {
 		comp = new Input({
-			isShowing: true,
+			initialShow: true,
 			isTogglePassword: true
 		});
 		
@@ -173,10 +173,10 @@ describe('Input', function() {
 	});
 
 	//editable while visible
-	it('should be editable if "isShowing" and "readonly" are false', function() {
+	it('should be editable if "initialShow" and "readonly" are false', function() {
 		comp = new Input({
 			editableWhileVisible: true,
-			isShowing: false,
+			initialShow: false,
 			isTogglePassword: true,
 			readonly: false
 		});
@@ -185,10 +185,10 @@ describe('Input', function() {
 		assert.equal('password', comp.element.childNodes[0].getAttribute('type'));
 	});
 
-	it('should be editable if "isShowing" is true and "readonly" is false', function() {
+	it('should be editable if "initialShow" is true and "readonly" is false', function() {
 		comp = new Input({
 			editableWhileVisible: true,
-			isShowing: true,
+			initialShow: true,
 			isTogglePassword: true,
 			readonly: false
 		});
@@ -197,10 +197,10 @@ describe('Input', function() {
 		assert.equal('text', comp.element.childNodes[0].getAttribute('type'));
 	});
 
-	it('should be not editable if "isShowing" is false and "readonly" is true', function() {
+	it('should be not editable if "initialShow" is false and "readonly" is true', function() {
 		comp = new Input({
 			editableWhileVisible: true,
-			isShowing: false,
+			initialShow: false,
 			isTogglePassword: true,
 			readonly: true
 		});
@@ -209,10 +209,10 @@ describe('Input', function() {
 		assert.equal('password', comp.element.childNodes[0].getAttribute('type'));
 	});
 
-	it('should be not editable if "isShowing" and "readonly" are true', function() {
+	it('should be not editable if "initialShow" and "readonly" are true', function() {
 		comp = new Input({
 			editableWhileVisible: true,
-			isShowing: true,
+			initialShow: true,
 			isTogglePassword: true,
 			readonly: true
 		});

@@ -8,22 +8,25 @@ import Soy from 'metal-soy';
 class Input extends Component {
 
 	created() {
+		this.isShowing_ = this.initialShow;
+		
 		if(this.editableWhileVisible) {
-			if(!this.readonly && !this.isShowing){
+			
+			if(!this.readonly && !this.initialShow){
 				this.editableWhileVisible = false;
 			}
 
-			if(this.readonly && this.isShowing) {
+			if(this.readonly && this.initialShow) {
 				this.readonly = false;
 			}
 		}
 	}
 
 	toggle() {
-		this.isShowing = !this.isShowing;
+		this.isShowing_ = !this.isShowing_;
 		
 		if(this.editableWhileVisible) {
-			if(this.isShowing) {
+			if(this.isShowing_) {
 				this.readonly = false;
 			} else {
 				this.readonly = true;
@@ -73,9 +76,19 @@ Input.STATE = {
 	 * @type {boolean}
 	 * @default false
 	 */
-	isShowing: {
+	initialShow: {
 		validator: core.isBoolean,
 		value: false
+	},
+	/**
+	 * Defines the internal value that controls the related field logic visibility
+	 * @type {boolean}
+	 * @default false
+	 */
+	isShowing_: {
+		validator: core.isBoolean,
+		value: false,
+		internal: true
 	},
 	/**
 	 * Defines if this field has a behavior to hide and show the value
