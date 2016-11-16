@@ -1,6 +1,6 @@
 {
   "name": "metal-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom input Metal.js component",
   "license": "BSD",
   "repository": "ygorcosta/metal-input",
