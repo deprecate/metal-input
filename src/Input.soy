@@ -1,8 +1,18 @@
 {namespace Input}
 
 /**
+ * @param? autocomplete
+ * @param? classes
+ * @param? fieldIndex
  * @param? isShowing_
  * @param? isTogglePassword
+ * @param? maxLength
+ * @param? name
+ * @param? onInput
+ * @param? readonly
+ * @param? rowIndex
+ * @param? type
+ * @param? value
  */
 {template .render}
 	
@@ -20,32 +30,34 @@
 {/template}
 
 /**
- * @param classes
- * @param name
- * @param placeholder
- * @param type
- * @param value
+ * @param? type
  */
 {template .input kind="html"}
-	<input class="{$classes ?: ''}"
-		name="{$name ?: ''}"
-		placeholder="{$placeholder ?: ''}"
-		type="{$type ?: 'text'}"
-		value="{$value ?: ''}"
+	<input type="{$type ?: 'text'}"
 		{call .fieldAttrs data="all" /}
 	/>
 {/template}
 
 /**
  * @param? autocomplete
+ * @param? classes
  * @param? fieldIndex
  * @param? maxLength
+ * @param? name
  * @param? onInput
+ * @param? placeholder
  * @param? readonly
  * @param? rowIndex
+ * @param? value
  */
 {template .fieldAttrs kind="attributes"}
-	autocomplete="{$autocomplete ?: 'on'}"
+	{if isNonnull($autocomplete)}
+		autocomplete="{$autocomplete ?: 'on'}"
+	{/if}
+
+	{if isNonnull($classes)}
+		class="{$classes}"
+	{/if}
 	
 	{if isNonnull($fieldIndex)}
 		data-field-index="{$fieldIndex}"
@@ -54,9 +66,17 @@
 	{if isNonnull($maxLength)}
 		maxlength="{$maxLength}"
 	{/if}
+
+	{if isNonnull($name)}
+		name="{$name}"
+	{/if}
 	
 	{if isNonnull($onInput)}
 		data-oninput="{$onInput}"
+	{/if}
+
+	{if isNonnull($placeholder)}
+		placeholder="{$placeholder}"
 	{/if}
 	
 	{if isNonnull($readonly) and $readonly}
@@ -65,6 +85,10 @@
 
 	{if isNonnull($rowIndex)}
 		data-row-index="{$rowIndex}"
+	{/if}
+
+	{if isNonnull($value)}
+		value="{$value}"
 	{/if}
 {/template}
 
