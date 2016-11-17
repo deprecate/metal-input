@@ -95,10 +95,8 @@
  * @param isShowing_
  */
 {template .togglePassword kind="html"}
-	<span class="input-group-btn">
-		<button class="btn btn-sm btn-primary" type="button" data-onclick="toggle">
-			<span class="{$isShowing_ ? 'icon-12-eye-off' : 'icon-12-eye'}"></span>
-			<div class="btn-tooltip">{$isShowing_ ? 'Hide' : 'Show'}</div>
-		</button>
-	</span>
+	<button class="btn btn-sm btn-primary" type="button" data-onclick="toggle">
+		<span class="{$isShowing_ ? 'icon-12-eye-off' : 'icon-12-eye'}"></span>
+		<div class="btn-tooltip">{$isShowing_ ? 'Hide' : 'Show'}</div>
+	</button>
 {/template}
