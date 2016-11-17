@@ -51,9 +51,8 @@
  * @param? value
  */
 {template .fieldAttrs kind="attributes"}
-	{if isNonnull($autocomplete)}
-		autocomplete="{$autocomplete ?: 'on'}"
-	{/if}
+	
+	autocomplete="{$autocomplete ?: 'on'}"
 
 	{if isNonnull($classes)}
 		class="{$classes}"
