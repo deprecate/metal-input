@@ -17,7 +17,7 @@
 {template .render}
 	
 	{if $isTogglePassword}
-		<div class="input-group has-action-button">
+		<div class="has-action-button">
 			{call .input data="all" }
 				{param type : $isShowing_ ? 'text' : 'password' /}
 			{/call}
