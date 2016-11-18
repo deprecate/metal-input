@@ -29,7 +29,6 @@ describe('Input', function() {
 			name: 'username'
 		});
 		assert.equal('username', comp.element.name);
-		assert.ok(comp.element.hasAttribute('name'));
 	});
 
 	it('should add a class to requested field', function() {
@@ -52,7 +51,6 @@ describe('Input', function() {
 			placeholder: 'Name'
 		});
 		assert.equal('Name', comp.element.getAttribute('placeholder'));
-		assert.ok(comp.element.hasAttribute('placeholder'));
 	});
 
 	it('should set a value to requested field', function() {
@@ -67,8 +65,13 @@ describe('Input', function() {
 			autocomplete: 'on'
 		});
 		assert.equal('on', comp.element.getAttribute('autocomplete'));
-		comp.element.setAttribute('autocomplete', 'off');
-		assert.equal('off', comp.element.getAttribute('autocomplete'));
+
+		comp.autocomplete = 'off';
+
+		comp.once('stateSynced', function(done) {
+			assert.equal('off', comp.element.getAttribute('autocomplete'));
+			done();
+		});
 	});
 
 	it('should add "readonly" html attribute to requested field', function() {
@@ -83,7 +86,6 @@ describe('Input', function() {
 			maxLength: 10
 		});
 		assert.equal(10, comp.element.getAttribute('maxlength'));
-		assert.ok(comp.element.hasAttribute('maxlength'));
 	});
 
 	it('should add "data-field-index" custom attribute to requested field', function() {
@@ -91,7 +93,6 @@ describe('Input', function() {
 			fieldIndex: 1
 		});
 		assert.equal(1, comp.element.getAttribute('data-field-index'));
-		assert.ok(comp.element.hasAttribute('data-field-index'));
 	});
 
 	it('should add "data-row-index" custom attribute to requested field', function() {
@@ -99,7 +100,6 @@ describe('Input', function() {
 			rowIndex: 0
 		});
 		assert.equal(0, comp.element.getAttribute('data-row-index'));
-		assert.ok(comp.element.hasAttribute('data-row-index'));
 	});
 
 	it('should add "data-oninput" custom attribute to requested field', function() {
@@ -146,8 +146,8 @@ describe('Input', function() {
 		comp = new Input({
 			isTogglePassword: true
 		});
-		
-		let toggleButton = comp.element.childNodes[1].querySelector('button');
+
+		let toggleButton = comp.element.querySelector('button');
 		dom.triggerEvent(toggleButton, 'click');
 
 		comp.once('stateSynced', function(done) {
@@ -163,7 +163,7 @@ describe('Input', function() {
 			isTogglePassword: true
 		});
 		
-		let toggleButton = comp.element.childNodes[1].querySelector('button');
+		let toggleButton = comp.element.querySelector('button');
 		dom.triggerEvent(toggleButton, 'click');
 
 		comp.once('stateSynced', function(done) {
