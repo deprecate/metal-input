@@ -60,35 +60,44 @@
 			fieldIndex: 2
 		}, '#form');
 
-		window.readonly = new metal.Input({
+		window.readonlyTrue = new metal.Input({
 			classes: 'form-control',
-			initialShow: false,
+			initialShow: true,
 			isTogglePassword: true,
-			placeholder: 'Secret question #readonly',
+			placeholder: 'Always readonly',
 			readonly : true,
-			value: 'I\'m a readonly field',
+			value: 'I\'m a readonly everytime',
 			fieldIndex: 3
+		}, '#form');
+
+		window.readonlyFalse = new metal.Input({
+			classes: 'form-control',
+			initialShow: true,
+			isTogglePassword: true,
+			placeholder: 'Always editable',
+			readonly : false,
+			value: 'I\'m editable everytime',
+			fieldIndex: 4
 		}, '#form');
 
 		window.editableWhileVisible = new metal.Input({
 			classes: 'form-control',
 			initialShow: false,
 			isTogglePassword: true,
-			placeholder: 'Secret question #readonly',
-			readonly : false,
+			placeholder: 'editableWhileVisible - value empty',
+			readonly : true,
 			editableWhileVisible : true,
-			value: 'I\'m editable everytime',
-			fieldIndex: 4
+			fieldIndex: 7
 		}, '#form');
 
 		window.editableWhileVisible1 = new metal.Input({
 			classes: 'form-control',
 			initialShow: true,
 			isTogglePassword: true,
-			placeholder: 'Secret question #readonly',
+			placeholder: 'editableWhileVisible - initialShow = true',
 			readonly : false,
 			editableWhileVisible : true,
-			value: 'I\'m editable while I\'m visible 1',
+			value: 'editableWhileVisible - initialShow = true',
 			fieldIndex: 5
 		}, '#form');
 
@@ -96,32 +105,13 @@
 			classes: 'form-control',
 			initialShow: false,
 			isTogglePassword: true,
-			placeholder: 'Secret question #readonly',
+			placeholder: 'editableWhileVisible - initialShow = false',
 			readonly : true,
 			editableWhileVisible : true,
-			value: 'I\'m editable while I\'m visible 2',
+			value: 'editableWhileVisible - initialShow = false',
 			fieldIndex: 6
 		}, '#form');
 
-		window.editableWhileVisible3 = new metal.Input({
-			classes: 'form-control',
-			initialShow: true,
-			isTogglePassword: true,
-			placeholder: 'Secret question #readonly',
-			readonly : true,
-			editableWhileVisible : true,
-			value: 'I\'m editable while I\'m visible 3',
-			fieldIndex: 7
-		}, '#form');
-
-		window.secret = new metal.Input({
-			classes: 'form-control',
-			initialShow: true,
-			isTogglePassword: true,
-			placeholder: 'Secret question',
-			readonly : false,
-			fieldIndex: 8
-		}, '#form');
 	</script>
 </body>
 </html>

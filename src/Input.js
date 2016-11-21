@@ -11,13 +11,15 @@ class Input extends Component {
 		this.isShowing_ = this.initialShow;
 		
 		if(this.editableWhileVisible) {
-			
-			if(!this.readonly && !this.initialShow){
-				this.editableWhileVisible = false;
-			}
-
-			if(this.readonly && this.initialShow) {
+			if(!this.value || (this.value && this.valeu === '')) {
+				this.isShowing_ = true;
 				this.readonly = false;
+			} else {
+				if(this.isShowing_) {
+					this.readonly = false;
+				} else {
+					this.readonly = true;
+				}
 			}
 		}
 	}
