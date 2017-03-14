@@ -25,15 +25,12 @@
   "keywords": [
     "metal"
   ],
-  "dependencies": {
-    "bootstrap": "^3.3.6",
-    "metal-soy": "^2.0.0",
-    "westyle": "wedeploy/westyle#master"
-  },
   "devDependencies": {
     "babel-cli": "^6.4.5",
     "babel-preset-metal": "^4.0.0",
     "gulp": "^3.8.11",
-    "gulp-metal": "^1.0.0"
+    "gulp-metal": "^1.0.0",
+    "metal-soy": "^2.0.0",
+    "marble": "~2.7.0"
   }
 }
