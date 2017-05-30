@@ -1,15 +1,13 @@
-'use strict';
-
-import core from 'metal';
-import templates from './Input.soy.js';
 import Component from 'metal-component';
+import core from 'metal';
 import Soy from 'metal-soy';
+import templates from './Input.soy.js';
 
 class Input extends Component {
 
 	created() {
 		this.isShowing_ = this.initialShow;
-		
+
 		if(this.editableWhileVisible) {
 			if(!this.value || (this.value && this.valeu === '')) {
 				this.isShowing_ = true;
@@ -26,7 +24,7 @@ class Input extends Component {
 
 	toggle() {
 		this.isShowing_ = !this.isShowing_;
-		
+
 		if(this.editableWhileVisible) {
 			if(this.isShowing_) {
 				this.readonly = false;
@@ -35,7 +33,7 @@ class Input extends Component {
 			}
 		}
 	}
-	
+
 }
 Soy.register(Input, templates);
 
@@ -107,7 +105,6 @@ Input.STATE = {
 	 */
 	maxLength: {
 		validator: core.isNumber
-
 	},
 	/**
 	 * Defines the function name to 'oninput' event
