@@ -30,7 +30,9 @@
     "babel-preset-metal": "^4.0.0",
     "gulp": "^3.8.11",
     "gulp-metal": "^1.0.0",
-    "metal-soy": "^2.0.0",
     "marble": "~2.7.0"
+  },
+  "dependencies": {
+    "metal-soy": "^2.10.0"
   }
 }
